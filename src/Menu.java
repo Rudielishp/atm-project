@@ -4,7 +4,7 @@ public class Menu {
         menu.saludo();
     }
 
-    public void saludo() {
+    private void saludo() {
         System.out.println("          Bienvenido\n" +
                 "Por favor inserte su tajeta ATM");
     }
