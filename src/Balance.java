@@ -6,8 +6,9 @@ public class Balance {
         cuentaBalance = 10000;
     }
 
-    public void mostrarBalance(){
-        System.out.println("Su balance actual es: " + cuentaBalance);
+    public void mostrarBalance() throws Exception {
+        Transaccion ejecutador = new Transaccion();
+        ejecutador.ActualizarFondos();
     }
 
 }
