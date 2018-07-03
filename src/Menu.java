@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class Menu {
     private Balance balance;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Menu menu = new Menu();
         menu.seleccion();
     }
 
-    private void seleccion() {
+    protected void seleccion() throws Exception {
         Scanner scanner = new Scanner(System.in);
         int operacion = 0;
         System.out.println("Elija la transaccion que desea efectuar:\n");
@@ -24,6 +24,15 @@ public class Menu {
             balance = new Balance();
             balance.mostrarBalance();
             break;
+
+            case 2:
+
+                break;
+
+            case 3:
+                Transaccion ejecutador = new Transaccion();
+                ejecutador.ActualizarFondos();
+                break;
         }
     }
 
