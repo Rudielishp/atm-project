@@ -10,16 +10,12 @@ import java.nio.file.Paths;
 
         private static final String FILENAME = "C:\\Users\\cesar\\Desktop\\Desktop2\\Fondos.txt";
 
-        //static transaccion prueba = new transaccion();
-//        public static void main(String[] args) throws Exception {
-//            prueba.ActualizarFondos();
-//        }
 
         protected void ActualizarFondos() throws Exception{
             Scanner sc = new Scanner(System.in);
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
-            //0 si el ATM esta atrabancado, 1 si no lo está
+            //Cualquier caracter si el ATM esta atrabancado, 1 si no lo está
             int x = 1;
 
             if(x == 1){
@@ -74,7 +70,8 @@ import java.nio.file.Paths;
 
                 switch(z){
                     case 1:
-
+                        Menu ejecutador = new Menu();
+                        ejecutador.seleccion();
                         break;
                     case 2:
                         System.out.println("Por favor tome su recibo y su tarjeta ATM. Gracias!!");
