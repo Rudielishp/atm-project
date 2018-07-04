@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
 public class Menu {
-    private Balance balance;
+
+    protected Fondo fondo;
+
 
     public static void main(String[] args) throws Exception {
         Menu menu = new Menu();
@@ -12,28 +14,29 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         int operacion = 0;
         System.out.println("Elija la transaccion que desea efectuar:\n");
-        System.out.println("1- Balance");
+        System.out.println("1- Fondo");
         System.out.println("2- Retiro");
-        System.out.println("3- Deposito");
+        System.out.println("3- Depositar");
 
         operacion = scanner.nextInt();
 
-        switch (operacion){
 
-        case 1:
-            balance = new Balance();
-            balance.mostrarBalance();
-            break;
+        switch (operacion) {
+
+            case 1:
+
+                break;
 
             case 2:
 
                 break;
 
             case 3:
-                Transaccion ejecutador = new Transaccion();
-                ejecutador.ActualizarFondos();
+                Transaccion transaccion = new Transaccion();
+                transaccion.ActualizarFondos();
                 break;
         }
+
     }
 
 }
