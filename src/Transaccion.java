@@ -2,12 +2,14 @@ import java.util.Scanner;
 
 
 public class Transaccion{
-    Fondo fondo = new Fondo();
-
+//    Fondo fondo = new Fondo();
+//    static int resultado;
+      protected static int fondo = 10000;
 
         protected void ActualizarFondos() throws Exception{
 
             Scanner sc = new Scanner(System.in);
+            Transaccion transaccion = new Transaccion();
 
             //Cualquier número diferente de 1 si el ATM esta atrabancado, 1 si no lo está
             int x = 1;
@@ -16,48 +18,40 @@ public class Transaccion{
                 System.out.println("Inserte la cantidad de dinero que desea depositar en el compartimiento");
                 int deposito = sc.nextInt();
 
-                int resultado = fondo.getFondoBalance() + deposito;
-                fondo.setFondoBalance(resultado);
+                fondo += deposito;
+//                resultado = fondo.getFondoBalance() + deposito;
+//                fondo.setFondoBalance(resultado);
 
-                System.out.println("Su nuevo fondo esta siendo imprimido. Desea hacer otra transacción?");
-                System.out.println(fondo.getFondoBalance());
+                System.out.println("Su nuevo fondo esta siendo imprimido.");
+                System.out.println(fondo);
+//                System.out.println(fondo.getFondoBalance());
                 System.out.println(" ");
 
-                System.out.println("1. Sí");
-                System.out.println("2. No");
-                System.out.println(" ");
-
-                Scanner scs = new Scanner(System.in);
-                int z = sc.nextInt();
-
-                switch(z){
-                    case 1:
-                        Menu menu = new Menu();
-                        menu.seleccion();
-                        break;
-                    case 2:
-                        System.out.println("Por favor tome su recibo y su tarjeta ATM. Gracias!!");
-                        break;
-                }
+                transaccion.realizarOtra();
             }
             else{
-                System.out.println("Temporalmente no se pueden realizar depósitos. Desea realizar alguna otra transacción?");
-                System.out.println("1. Sí");
-                System.out.println("2. No");
-                System.out.println(" ");
+                System.out.println("Temporalmente no se pueden realizar depósitos.");
+                transaccion.realizarOtra();
+            }
+        }
 
-                Scanner scs = new Scanner(System.in);
-                int z = sc.nextInt();
+        protected void realizarOtra() throws Exception{
+            System.out.println("Desea realizar otra transaccion??");
+            System.out.println("1. Sí");
+            System.out.println("2. No");
+            System.out.println(" ");
 
-                switch(z){
-                    case 1:
-                        Menu ejecutador = new Menu();
-                        ejecutador.seleccion();
-                        break;
-                    case 2:
-                        System.out.println("Por favor tome su recibo y su tarjeta ATM. Gracias!!");
-                        break;
-                }
+            Scanner scs = new Scanner(System.in);
+            int z = scs.nextInt();
+
+            switch(z){
+                case 1:
+                    Menu ejecutador = new Menu();
+                    ejecutador.seleccion();
+                    break;
+                case 2:
+                    System.out.println("Por favor tome su recibo y su tarjeta ATM. Gracias!!");
+                    break;
             }
         }
     }

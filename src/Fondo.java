@@ -1,9 +1,9 @@
 public class Fondo {
 
-    public int fondoBalance;
+    public static int fondoBalance;
 
     public Fondo(){
-        fondoBalance = 10000;
+        fondoBalance = 0;
     }
 
 

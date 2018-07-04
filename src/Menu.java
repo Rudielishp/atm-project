@@ -24,8 +24,7 @@ public class Menu {
         switch (operacion) {
 
             case 1:
-                fondo = new Fondo();
-                fondo.mostrarBalance();
+
                 break;
 
             case 2:
@@ -37,7 +36,6 @@ public class Menu {
                 transaccion.ActualizarFondos();
                 break;
         }
-
 
     }
 
