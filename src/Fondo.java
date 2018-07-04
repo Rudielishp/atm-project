@@ -6,10 +6,6 @@ public class Fondo {
         fondoBalance = 10000;
     }
 
-    public void mostrarBalance() throws Exception {
-        Transaccion ejecutador = new Transaccion();
-        ejecutador.ActualizarFondos();
-    }
 
     public int getFondoBalance() {
         return fondoBalance;
