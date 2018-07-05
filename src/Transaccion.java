@@ -4,10 +4,16 @@ import java.util.Scanner;
 public class Transaccion{
 //    Fondo fondo = new Fondo();
 //    static int resultado;
+
       protected static int fondoUsuario = 10000;
       protected static int fondoAtm = 100000;
 
-
+        protected  void VerificarBalance() throws Exception{
+            System.out.println("Su balance está siendo imprimido:");
+            System.out.println("Su balance actual es de " +fondoUsuario);
+            Transaccion transaccion = new Transaccion();
+            transaccion.realizarOtra();
+        }
 
 
         protected void ActualizarFondos() throws Exception{
@@ -26,7 +32,7 @@ public class Transaccion{
 //                fondo.setFondoBalance(resultado);
 
                 System.out.println("Su nuevo fondo esta siendo imprimido.");
-                System.out.println(fondoUsuario);
+                System.out.println("Su balance actual es de " +fondoUsuario);
 //                System.out.println(fondo.getFondoBalance());
                 System.out.println(" ");
 
@@ -59,7 +65,7 @@ public class Transaccion{
                     } else if(retirar % 10 == 0){
                         fondoUsuario -= retirar;
                         System.out.println("Haz retirado " +retirar+" Su nuevo balance está siendo imprimido:");
-                        System.out.println(fondoUsuario);
+                        System.out.println("Su balance actual es de " +fondoUsuario);
                         transaccion.realizarOtra();
                     }
                     else{
