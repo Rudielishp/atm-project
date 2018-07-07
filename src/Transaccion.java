@@ -45,8 +45,21 @@ public class Transaccion {
         int x = 1;
 
         if (x == 1) {
-            System.out.println("Inserte la cantidad de dinero que desea depositar en el compartimiento");
-            int deposito = sc.nextInt();
+            int deposito = 0;
+
+            while(deposito <= 0){
+                try{
+                    System.out.println("Inserte la cantidad de dinero que desea depositar en el compartimiento");
+                    deposito = sc.nextInt();
+                    if(deposito <= 0){
+                        System.out.println("Caracteres Inválidos");
+                    }
+                    break;
+                }
+                catch (Exception e){
+                    System.out.println("Solo se pueden ingresar números");
+                }
+            }
 
             fondoUsuario += deposito;
 
