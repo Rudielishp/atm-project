@@ -7,6 +7,9 @@ import java.util.Scanner;
 public class Autentificar {
     Scanner scanner = new Scanner(System.in);
 
+    public Autentificar(){
+    }
+
     public void comprobarAcceso() {
         for (int run = 0; run < 3; run++) {
             System.out.println("Ingrese su tarjeta");

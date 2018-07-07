@@ -6,16 +6,39 @@ public class Transaccion {
     protected static int fondoUsuario = 10000;
     protected static int fondoAtm = 100000;
 
+    public Transaccion(int operacion) {
+        switch (operacion) {
+            case 1:
+                try {
+                    VerificarBalance();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+            case  2:
+                try {
+                    VerificarFondos();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+            case 3:
+                try {
+                    ActualizarFondos();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+        }
+    }
+
     protected void VerificarBalance() throws Exception {
         System.out.println("Su balance está siendo imprimido:");
         System.out.println("Su balance actual es de " + fondoUsuario);
-        Transaccion transaccion = new Transaccion();
-        transaccion.realizarOtra();
+        realizarOtra();
     }
 
 
     protected void ActualizarFondos() throws Exception {
-        Transaccion transaccion = new Transaccion();
         Scanner sc = new Scanner(System.in);
 
         //Cualquier número diferente de 1 si el ATM esta atrabancado, 1 si no lo está
@@ -31,16 +54,15 @@ public class Transaccion {
             System.out.println("Su balance actual es de " + fondoUsuario);
             System.out.println(" ");
 
-            transaccion.realizarOtra();
+            realizarOtra();
         } else {
             System.out.println("Temporalmente no se pueden realizar depósitos.");
-            transaccion.realizarOtra();
+            realizarOtra();
         }
     }
 
 
     protected void VerificarFondos() throws Exception {
-        Transaccion transaccion = new Transaccion();
         Scanner sc = new Scanner(System.in);
 
         //Cualquier número diferente de 1 si el ATM esta atrabancado, 1 si no lo está
@@ -54,24 +76,24 @@ public class Transaccion {
             if (retirar <= fondoAtm) {
                 if (retirar > fondoUsuario || retirar == 0) {
                     System.out.println("Balance insuficiente. No puede retirar esa cantidad de dinero");
-                    transaccion.realizarOtra();
+                    realizarOtra();
 
                 } else if (retirar % 10 == 0) {
                     fondoUsuario -= retirar;
                     System.out.println("Haz retirado " + retirar + " Su nuevo balance está siendo imprimido:");
                     System.out.println("Su balance actual es de " + fondoUsuario);
-                    transaccion.realizarOtra();
+                    realizarOtra();
                 } else {
                     System.out.println("Solamente se puede retirar un monto que sea múltiplo de 10");
-                    transaccion.realizarOtra();
+                    realizarOtra();
                 }
             } else {
                 System.out.println("Lo sentimos, pero el monto que desea retirar no se encuentra disponible en este ATM");
-                transaccion.realizarOtra();
+                realizarOtra();
             }
         } else {
             System.out.println("Temporalmente no se pueden realizar retiros");
-            transaccion.realizarOtra();
+            realizarOtra();
         }
     }
 
