@@ -2,12 +2,9 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static void main(String[] args) throws Exception {
-        Menu menu = new Menu();
+    public static void main(String[] args) {
         Autentificar autentificar = new Autentificar();
-
         autentificar.comprobarAcceso();
-        menu.seleccion();
     }
 
     protected void seleccion() {

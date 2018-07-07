@@ -6,11 +6,9 @@ import java.util.Scanner;
 
 public class Autentificar {
     Scanner scanner = new Scanner(System.in);
-
-    public Autentificar(){
-    }
-
+    Menu menu = new Menu();
     public void comprobarAcceso() {
+
         for (int run = 0; run < 3; run++) {
             System.out.println("Ingrese su tarjeta");
             String tarjeta = scanner.nextLine();
@@ -30,6 +28,7 @@ public class Autentificar {
                 return;
             }
         }
+        menu.seleccion();
     }
 
     private BufferedReader readFileAsString(String fileName) {
@@ -45,7 +44,6 @@ public class Autentificar {
 
     private String verificarCredenciales(String acctNum, String pwd) throws Exception {
         File file = new File(System.getProperty("user.dir"), "credentiales\\usuario.txt");
-        System.out.println(file.getAbsolutePath());
         String result = "ERROR";
         BufferedReader data = readFileAsString(file.toString());
 
