@@ -21,7 +21,7 @@ public class Menu {
             Transaccion transaccion = new Transaccion(operacion);
         }
         catch (Exception e){
-            System.out.println("Solo se pueden ingresar números");
+            System.out.println("Comando inválido. Inserte un número de los indicados..");
             seleccion();
         }
     }

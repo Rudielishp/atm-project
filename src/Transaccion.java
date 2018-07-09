@@ -78,7 +78,7 @@ public class Transaccion {
                     }
                 }
                 catch (Exception e){
-                    System.out.println("Solo se pueden ingresar números");
+                    System.out.println("Comando inválido..");
                     realizarOtra();
                 }
 
@@ -123,7 +123,7 @@ public class Transaccion {
                 }
             }
             catch (Exception e){
-                System.out.println("Solo se pueden ingresar números");
+                System.out.println("Comando inválido..");
                 realizarOtra();
             }
 
