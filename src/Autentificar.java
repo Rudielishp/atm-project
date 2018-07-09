@@ -7,15 +7,15 @@ import java.util.Scanner;
 public class Autentificar {
     Scanner scanner = new Scanner(System.in);
     Menu menu = new Menu();
-    public void comprobarAcceso() {
+    public void comprobarAcceso() throws Exception {
 
         for (int run = 0; run < 3; run++) {
-            System.out.println("Ingrese su tarjeta");
+            System.out.println("Bienvenido! Ingrese su tarjeta");
             String tarjeta = scanner.nextLine();
             System.out.println("Ingrese su PIN");
             String pin = scanner.nextLine();
 
-            String result = null;
+            String result ="";
             try {
                 result = verificarCredenciales(tarjeta, pin);
             } catch (Exception e) {
