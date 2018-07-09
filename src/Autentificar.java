@@ -24,7 +24,7 @@ public class Autentificar {
             if (!result.equals("ERROR")) {
                 break;
             } else if (run == 2) {
-                System.out.println("MAXIMO DE INTENTOS EXCEDIDO");
+                System.out.println("MAXIMO DE INTENTOS EXCEDIDO. SU TARJETA ATM SERÁ RETENIDA");
                 return;
             }
         }
