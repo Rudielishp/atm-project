@@ -33,11 +33,13 @@ public class Transaccion {
                         }
                 }
             } else{
+                System.out.println(" ");
                 System.out.println("Comando inválido. Inserte un número de los indicados..");
                 realizarOtra();
             }
         }
         catch (Exception e){
+            System.out.println(" ");
             System.out.println("Comando inválido. Inserte un número de los indicados..");
             realizarOtra();
         }
@@ -78,11 +80,13 @@ public class Transaccion {
                     }
                 }
                 catch (Exception e){
+                    System.out.println(" ");
                     System.out.println("Comando inválido..");
                     realizarOtra();
                 }
 
         } else {
+            System.out.println(" ");
             System.out.println("Temporalmente no se pueden realizar depósitos.");
             realizarOtra();
         }
@@ -114,6 +118,7 @@ public class Transaccion {
                         System.out.println("Su balance actual es de " + fondoUsuario);
                         realizarOtra();
                     } else {
+                        System.out.println(" ");
                         System.out.println("Solamente se puede retirar un monto que sea múltiplo de 10");
                         realizarOtra();
                     }
@@ -123,11 +128,13 @@ public class Transaccion {
                 }
             }
             catch (Exception e){
+                System.out.println(" ");
                 System.out.println("Comando inválido..");
                 realizarOtra();
             }
 
         } else {
+            System.out.println(" ");
             System.out.println("Temporalmente no se pueden realizar retiros");
             realizarOtra();
         }
@@ -151,15 +158,18 @@ public class Transaccion {
                         menu.seleccion();
                         break;
                     case 2:
+                        System.out.println(" ");
                         System.out.println("Por favor tome su recibo y su tarjeta ATM. Gracias!!");
                         break;
                 }
             }else{
+                System.out.println(" ");
                 System.out.println("Comando inválido. Inserte un número de los indicados..");
                 realizarOtra();
             }
         }
         catch (Exception e){
+            System.out.println(" ");
             System.out.println("Comando inválido. Inserte un número de los indicados..");
             realizarOtra();
         }
